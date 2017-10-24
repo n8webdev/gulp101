@@ -1,0 +1,14 @@
+{
+  "name": "alpha-gulp",
+  "version": "1.0.0",
+  "description": "My first project with Gulp",
+  "main": "app/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nathan Torquato",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
