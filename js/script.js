@@ -5,6 +5,7 @@
  * Copyright (c) 2014, ScoopThemes
  * Licensed under the BSD license.
  */
+
 'use strict';
 
 var appMaster = {
