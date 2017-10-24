@@ -1,15 +1,22 @@
 const gulp    = require('gulp'),
       uglify  = require('gulp-uglify'),
-      sass    = require('gulp-ruby-sass'),
-      plumber =require('gulp-plumber');
+      sass    = require('gulp-ruby-sass');
+      // plumber =require('gulp-plumber');
+
+// handle errors
+const errorLog = error => {
+  console.error.bind(error);
+  this.emit('end');
+}
 
 // Scripts Task
 // uglifies *.js
 gulp.task('scripts', () => {
   // console.log('test');
   gulp.src('js/*.js')
-  .pipe(plumber())
+  // .pipe(plumber())
   .pipe(uglify())
+  .on('error', errorLog)
   .pipe(gulp.dest('dist/js'))
 })
 
@@ -19,7 +26,8 @@ gulp.task('styles', function() {
   sass('sass/**/*.scss', {
    style: 'compressed'
   })
-  .pipe(plumber())
+  // .pipe(plumber())
+  .on('error', errorLog)
   .pipe(gulp.dest('dist/css'));
  });
 
